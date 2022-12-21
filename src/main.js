@@ -1,0 +1,22 @@
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+
+import pinia from "./stores/store";
+// import { createPinia } from "pinia";
+// const pinia = createPinia();
+
+import router from "./router";
+
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+
+// import 'element-plus/theme-chalk/dark/css-vars.css'
+// import InstantSearch from "vue-instantsearch";
+
+createApp(App)
+  .use(pinia)
+  .use(router)
+  .use(ElementPlus)
+  // .use(InstantSearch)
+  .mount("#app");

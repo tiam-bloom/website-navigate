@@ -1,0 +1,58 @@
+[
+    {
+        "id": "9F3vae5GEuefItWbKbnJg",
+        "title": "J's Blog",
+        "icon": "http://qiniu.yujing.fit/headImage/icon.png",
+        "url": "https://yujing.fit/",
+        "category": "我的网站",
+        "description": "个人博客"
+    },
+    {
+        "id": "Y4ZxBncP3M9gKii34zd0T",
+        "title": "Vite",
+        "icon": "https://cn.vitejs.dev/logo-with-shadow.png",
+        "url": "https://cn.vitejs.dev/guide/",
+        "category": "dev-tools",
+        "description": "下一代的前端工具链"
+    },
+    {
+        "id": "6Gl_2P39tkQGmm8GgFtWp",
+        "title": "Vue-Router",
+        "icon": "https://router.vuejs.org/logo.png",
+        "url": "https://router.vuejs.org/zh/installation.html",
+        "category": "dev-tools",
+        "description": "Vue.js 的官方路由"
+    },
+    {
+        "id": "_Am5fMZy1IbaKlDvIPp2_",
+        "title": " Element Plus",
+        "icon": "https://element-plus.gitee.io/images/element-plus-logo.svg",
+        "url": "https://element-plus.gitee.io/zh-CN/guide/quickstart.html",
+        "category": "dev-tools",
+        "description": "Element Plus - A Vue.js 3 UI library"
+    },
+    {
+        "id": "kfYD_ODWOywG89scWmX5W",
+        "title": "Pinia",
+        "icon": "https://pinia.vuejs.org/logo.svg",
+        "url": "https://pinia.vuejs.org/zh/introduction.html",
+        "category": "dev-tools",
+        "description": "值得你喜欢的 Vue Store"
+    },
+    {
+        "id": "-TuXkHkyfN-fbDsuzkYyb",
+        "title": "现代 JavaScript 教程",
+        "icon": "https://zh.javascript.info/img/favicon/favicon.png",
+        "url": "https://zh.javascript.info/",
+        "category": "study",
+        "description": "以最新的 JavaScript 标准为基准。通过简单但足够详细的内容，为你讲解从基础到高阶的 JavaScript 相关知识。"
+    },
+    {
+        "id": "lJ-FNEZm_hhAWwLYnnfsD",
+        "title": "MDN Web Docs",
+        "icon": "https://developer.mozilla.org/favicon-48x48.cbbd161b.png",
+        "url": "https://developer.mozilla.org/zh-CN/",
+        "category": "study",
+        "description": "Resources for Developers, by Developers"
+    }
+]
