@@ -1,6 +1,7 @@
 # 网站导航
 ## 演示地址
 https://go.code2022.top
+
 ## 技术点
 - Vue3
 - Vite
