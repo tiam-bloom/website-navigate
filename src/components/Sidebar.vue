@@ -3,7 +3,7 @@
         <ul class="infinite-list">
             <li class="infinite-list-item"><router-link active-class="active" to="/index">首页</router-link></li>
             <li class="infinite-list-item" v-for="item in categories">
-                <router-link active-class="active" :to="{ name: item }">{{ transname(item) }}</router-link>
+                <router-link active-class="active" :to="{ name: item }">{{ item }}</router-link>
             </li>
         </ul>
     </div>
@@ -15,16 +15,6 @@ import { storeToRefs } from "pinia";
 const siteStore = useSiteStore()
 const { categories } = storeToRefs(siteStore)
 
-const transname = (name) => {
-    switch (name) {
-        case 'dev-tools':
-            return '开发工具'
-        case 'study':
-            return '学习导航'
-        default:
-            return name
-    }
-}
 </script>
 
 <style lang="less" scoped>

@@ -1,8 +1,8 @@
 <script setup>
+import { ref } from 'vue'
 import Dialog from './Dialog.vue'
-import {ref} from 'vue'
-let dialogFormVisible = ref(false)
-defineProps({
+
+const props = defineProps({
   siteInfo: {
     type: Object,
     // 默认值
@@ -14,6 +14,8 @@ defineProps({
     })
   }
 })
+
+const dialogVisible = ref(null)
 // 打开链接
 function goSite(url) {
   window.open(url)
@@ -21,7 +23,8 @@ function goSite(url) {
 // 修改
 function updateInfo() {
   console.log('updateInfo');
-  dialogFormVisible.value = false
+  console.log(props.siteInfo);
+  dialogVisible.value.setData(false)
 }
 </script>
 
@@ -30,7 +33,7 @@ function updateInfo() {
     <template #header>
       <div class="card-header">
         <h2>{{ siteInfo.title }}</h2>
-        <el-button class="button" @click.stop="dialogFormVisible = true">update</el-button>
+        <el-button class="button" @click.stop="dialogVisible.setData(true)">update</el-button>
       </div>
     </template>
     <div class="item">
@@ -39,15 +42,19 @@ function updateInfo() {
     </div>
   </el-card>
 
-  <Dialog 
-  title='Update web bookmarks'
-  :dialogFormVisible="dialogFormVisible" 
-  :handleConfirm="updateInfo" 
-  :siteInfo="siteInfo" />
+  <Dialog ref="dialogVisible" title='Update web bookmarks' :handleConfirm="updateInfo" :siteInfo="siteInfo" />
 </template>
 
 <style scoped lang="less">
 // less文档: https://less.bootcss.com/
+.card-header>h2 {
+  // 不换行
+  white-space: nowrap;
+  // 超出部分显示省略号
+  text-overflow: ellipsis;
+  // 超出部分隐藏
+  overflow: hidden;
+}
 
 .box-card {
   width: 408px;
@@ -79,5 +86,4 @@ function updateInfo() {
     }
   }
 }
-
 </style>

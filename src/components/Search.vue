@@ -2,81 +2,113 @@
     <div class="search">
         <!-- @input="search" 值改变触发 -->
         <!-- @change="search" 失去焦点或回车触发 -->
-        <el-input 
-        class="search-input" 
-        @keyup.enter.native="handleOrder" 
-        size="large" 
-        placeholder="请输入你想搜索的网站信息"     
-        v-model="keywords" 
-        :prefix-icon="Search" 
-        clearable 
-        autofocus />
-        
-        <Dialog 
-        ref="dialog"
-        title='Add new web bookmarks'
-        :dialogFormVisible="dialogFormVisible" 
-        :handleConfirm="addSiteInfo" 
-        :siteInfo="siteInfo" />
+        <el-autocomplete highlight-first-item style="width:600px;margin:50px" :fetch-suggestions="querySearch" :trigger-on-focus="false" class="search-input" @keyup.enter.native="handleOrder" size="large" placeholder="请输入你想搜索的网站信息"
+            v-model="keywords" :prefix-icon="Search" clearable autofocus />
+
+        <Dialog ref="dialogVisible" title='Add new web bookmarks' :handleConfirm="addSiteInfo" :siteInfo="siteInfo" />
     </div>
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref,onMounted } from 'vue'
 import { Search } from '@element-plus/icons-vue'
 import { storeToRefs } from 'pinia'
 import { useSiteStore } from '@/stores/siteInfo'
 import { ElMessage } from 'element-plus'
 import Dialog from './Dialog.vue'
+import axios from 'axios'
 
 const siteStore = useSiteStore()
 // 获取响应式的state
-const { siteInfoList, keywords } = storeToRefs(siteStore)
+const { keywords } = storeToRefs(siteStore)
 // 获取action
 const { setSiteInfo } = siteStore
+
+const dialogVisible = ref(false)
+
+//获取子组件的data数据
+// const a = dialogVisible.value.getData()
+
 function handleOrder() {
-    if (!keywords.value.startsWith('/')) {
-        return;
-    }
+    if (!keywords.value.startsWith('/')) return;
     const order = keywords.value.substring(1);
     console.log('获取指令', order);
     // todo 响应指令
-    dialogFormVisible.value = true;
+    switch (order) {
+        case 'add':
+            //给子组件传递数据
+            dialogVisible.value.setData(true)
+            break;
+        default:
+            break;
+    }
 }
-let dialogFormVisible = ref(false);
-// const dialog = ref(null);
-// let dialogFormVisible;
-// onMounted(() => {
-//     console.log(dialog);
-//     dialogFormVisible = dialog.value.dialogFormVisible;
-// })
 // 收集表单数据
 const siteInfo = reactive({
-    title: 'github',
-    icon: 'https://github.com/favicon.ico',
-    url: 'https://www.github.com',
-    description: '代码仓库',
-    category: 'dev-tools',
+    // title: 'github',
+    // icon: 'https://github.com/favicon.ico',
+    // url: 'https://www.github.com',
+    // description: '代码仓库',
+    // category: 'dev-tools',
+    title: '',
+    icon: '',
+    url: '',
+    description: '',
+    category: '',
 })
 
-const addSiteInfo = () => {
-    if (!siteInfo.title || !siteInfo.url) {
-        ElMessage.error('网站名称和网站地址不能为空')
+const addSiteInfo = async () => {
+    if ( !siteInfo.url || !siteInfo.category) {
+        ElMessage.error('网站地址或分类不能为空')
         return
     }
     // 添加数据   
-    console.log(siteInfoList.value);
-    siteInfoList.value.unshift(setSiteInfo(siteInfo));
+    let site = await setSiteInfo(siteInfo);
+    console.log(site);
+    // console.log(site.title);
+    // siteInfoList.value.unshift(s);
+    axios.post('http://localhost:3000', site,{
+        headers: {
+            'Content-Type': 'application/json',           
+        }
+    }).then(res => {
+        console.log(res.data);
+    })
     // 清空表单
     siteInfo.title = ''
     siteInfo.url = ''
     siteInfo.description = ''
     siteInfo.category = ''
     // 关闭弹窗
-    dialogFormVisible.value = false
+    dialogVisible.value.setData(false)
     ElMessage.success('添加成功');
 }
-
+const orders = ref([])
+// 命令提示
+const querySearch = (queryString, cb) => {
+  const results = queryString
+    ? orders.value.filter(createFilter(queryString))
+    : orders.value
+  // call callback function to return suggestions
+  cb(results)
+}
+const createFilter = (queryString) => {
+  return (orders) => {
+    return (
+        orders.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0
+    )
+  }
+}
+const loadAll = () => {
+  return [
+    { value: '/add' },
+    { value: '/delete' },
+    { value: '/update' },
+  ]
+}
+onMounted(() => {
+  orders.value = loadAll()
+})
 </script>
 
 <style lang="less" scoped>
@@ -87,11 +119,5 @@ const addSiteInfo = () => {
     /* 垂直居中 */
     align-items: center;
 }
-
-.search-input {
-    width: 600px;
-    margin: 50px;
-}
-
 
 </style>

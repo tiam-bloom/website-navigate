@@ -1,5 +1,5 @@
 <template>
-    <el-dialog :model-value="dialogFormVisible" :title="title" append-to-body>
+    <el-dialog v-model="dialogVisible" :title="title" append-to-body>
         <el-form :model="siteInfo">
             <el-form-item label="网站标题">
                 <el-input v-model="siteInfo.title" autocomplete="on" maxlength="15" autofocus clearable />
@@ -8,9 +8,8 @@
                 <el-input type="url" v-model="siteInfo.url" autocomplete="url" clearable />
             </el-form-item>
             <el-form-item label="网站类别">
-                <el-select v-model="siteInfo.category" placeholder="Please select a category">
-                    <el-option label="开发工具" value="dev-tools" />
-                    <el-option label="学习导航" value="study" />
+                <el-select filterable allow-create default-first-option v-model="siteInfo.category" placeholder="Please select a category">
+                    <el-option v-for="item in categories" :label="item" :value="item" />
                 </el-select>
             </el-form-item>
             <el-form-item label="网站描述">
@@ -21,7 +20,7 @@
 
         <template #footer>
             <span class="dialog-footer">
-                <el-button @click="dialogFormVisible = false">Cancel</el-button>
+                <el-button @click="dialogVisible = false">Cancel</el-button>
                 <el-button @click="handleConfirm" type="primary">Confirm</el-button>
             </span>
         </template>
@@ -30,18 +29,30 @@
 
 <script setup>
 import { ref } from 'vue'
-// let dialogFormVisible = ref(false)
-// defineExpose({
-//     dialogFormVisible,
-// })
-defineProps({
+import { storeToRefs } from 'pinia'
+import { useSiteStore } from '@/stores/siteInfo'
+const siteStore = useSiteStore()
+// 获取响应式的state
+const { categories } = storeToRefs(siteStore)
+
+const dialogVisible = ref(false)
+
+// 暴露出去父组件可以拿到 dialogVisible的数据
+defineExpose({
+    //父组件修改值
+    setData(val) {
+        dialogVisible.value = val
+    },
+    // 父组件读取值
+    getData() {
+        return dialogVisible.value
+    }
+})
+// 只读属性
+const props = defineProps({
     title: {
         type: String,
         default: '',
-    },
-    dialogFormVisible: {
-        type: Boolean,
-        default: false,
     },
     handleConfirm: {
         type: Function,
@@ -52,6 +63,7 @@ defineProps({
         default: () => { },
     },
 })
+
 </script>
 
 <style lang='less' scoped>

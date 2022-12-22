@@ -1,5 +1,45 @@
 [
     {
+        "id": "Us05G1tVAs_0pa_7kgXRC",
+        "title": "云解析DNS",
+        "icon": "https://img.alicdn.com/tfs/TB1Ly5oS3HqK1RjSZFPXXcwapXa-238-54.png",
+        "url": "https://dns.console.aliyun.com/#/dns/domainList",
+        "category": "运维工具",
+        "description": "阿里云登录 - 欢迎登录阿里云，安全稳定的云计算服务平台"
+    },
+    {
+        "id": "lPyugPpJmlWR17SWr6CxK",
+        "title": "自学SQL网(教程 视频 练习全套)",
+        "icon": "https://api.iowen.cn/favicon/www.xuesql.cn/.png",
+        "url": "http://www.xuesql.cn/",
+        "category": "学习导航",
+        "description": "自学SQL网(教程 视频 练习全套)"
+    },
+    {
+        "id": "5zwXZ7SXnLzOJ1dMG7qf8",
+        "title": "数据结构和算法动态可视化 (Chinese) - VisuAlgo",
+        "icon": "https://api.iowen.cn/favicon/visualgo.net/zh/.png",
+        "url": "https://visualgo.net/zh/",
+        "category": "学习导航",
+        "description": "数据结构和算法动态可视化 (Chinese) - VisuAlgo"
+    },
+    {
+        "id": "Ku06XjcNCzrUISYMVQzlx",
+        "title": "Dashboard – Vercel",
+        "icon": "https://api.iowen.cn/favicon/vercel.com/dashboard.png",
+        "url": "https://vercel.com/dashboard",
+        "category": "运维工具",
+        "description": "Dashboard – Vercel"
+    },
+    {
+        "id": "Vz3VfxynbJwaqQdLQlh4e",
+        "title": "算法可视化",
+        "icon": "https://api.iowen.cn/favicon/algorithm-visualizer.org/.png",
+        "url": "https://algorithm-visualizer.org/",
+        "category": "学习导航",
+        "description": "Algorithm Visualizer"
+    },
+    {
         "id": "9F3vae5GEuefItWbKbnJg",
         "title": "J's Blog",
         "icon": "http://qiniu.yujing.fit/headImage/icon.png",
@@ -12,7 +52,7 @@
         "title": "Vite",
         "icon": "https://cn.vitejs.dev/logo-with-shadow.png",
         "url": "https://cn.vitejs.dev/guide/",
-        "category": "dev-tools",
+        "category": "官方文档",
         "description": "下一代的前端工具链"
     },
     {
@@ -20,7 +60,7 @@
         "title": "Vue-Router",
         "icon": "https://router.vuejs.org/logo.png",
         "url": "https://router.vuejs.org/zh/installation.html",
-        "category": "dev-tools",
+        "category": "官方文档",
         "description": "Vue.js 的官方路由"
     },
     {
@@ -28,7 +68,7 @@
         "title": " Element Plus",
         "icon": "https://element-plus.gitee.io/images/element-plus-logo.svg",
         "url": "https://element-plus.gitee.io/zh-CN/guide/quickstart.html",
-        "category": "dev-tools",
+        "category": "官方文档",
         "description": "Element Plus - A Vue.js 3 UI library"
     },
     {
@@ -36,7 +76,7 @@
         "title": "Pinia",
         "icon": "https://pinia.vuejs.org/logo.svg",
         "url": "https://pinia.vuejs.org/zh/introduction.html",
-        "category": "dev-tools",
+        "category": "官方文档",
         "description": "值得你喜欢的 Vue Store"
     },
     {
@@ -44,7 +84,7 @@
         "title": "现代 JavaScript 教程",
         "icon": "https://zh.javascript.info/img/favicon/favicon.png",
         "url": "https://zh.javascript.info/",
-        "category": "study",
+        "category": "学习导航",
         "description": "以最新的 JavaScript 标准为基准。通过简单但足够详细的内容，为你讲解从基础到高阶的 JavaScript 相关知识。"
     },
     {
@@ -52,7 +92,135 @@
         "title": "MDN Web Docs",
         "icon": "https://developer.mozilla.org/favicon-48x48.cbbd161b.png",
         "url": "https://developer.mozilla.org/zh-CN/",
-        "category": "study",
+        "category": "学习导航",
         "description": "Resources for Developers, by Developers"
+    },
+    {
+        "id": "edIgEOLHEvZI3c9VRBpOx",
+        "title": "CSDN博客-专业IT技术发表平台",
+        "icon": "https://api.iowen.cn/favicon/blog.csdn.net/.png",
+        "url": "https://blog.csdn.net/",
+        "category": "开发社区",
+        "description": "这是一些网站默认描述"
+    },
+    {
+        "id": "iKGUznoEzwtKW6qcxzlYH",
+        "title": "网易云音乐 NodeJS 版 API",
+        "icon": "https://api.iowen.cn/favicon/neteasecloudmusicapi.vercel.app/.png",
+        "url": "https://neteasecloudmusicapi.vercel.app/",
+        "category": "接口文档",
+        "description": "这是一些网站默认描述"
+    },
+    {
+        "id": "7b4Q7ViUCxYimgy60pO2H",
+        "title": "哔哩哔哩 (゜-゜)つロ 干杯~-bilibili",
+        "icon": "https://api.iowen.cn/favicon/www.bilibili.com/.png",
+        "url": "https://www.bilibili.com/",
+        "category": "学习导航",
+        "description": "这是一些网站默认描述"
+    },
+    {
+        "id": "YUSibjA5rVgluLCPoSVLL",
+        "title": "GitHub",
+        "icon": "https://api.iowen.cn/favicon/github.com/.png",
+        "url": "https://github.com/",
+        "category": "代码仓库",
+        "description": "GitHub: Let’s build from here · GitHubPythonJavaScriptGo"
+    },
+    {
+        "id": "tMXHZdPlCmdY082vzGpfh",
+        "title": "Gitee",
+        "icon": "https://api.iowen.cn/favicon/gitee.com/.png",
+        "url": "https://gitee.com/",
+        "category": "代码仓库",
+        "description": "Gitee - 基于 Git 的代码托管和研发协作平台"
+    },
+    {
+        "id": "DmgeK6lpzUTzPvgxC6tco",
+        "title": "Stackoverflow",
+        "icon": "https://api.iowen.cn/favicon/stackoverflow.com.png",
+        "url": "https://stackoverflow.com",
+        "category": "开发社区",
+        "description": "开发问题交流社区"
+    },
+    {
+        "id": "_Ia3C8auPPXOHA6aGGN-3",
+        "title": "网易云音乐API",
+        "icon": "https://api.iowen.cn/favicon/music-api.yujing.fit/.png",
+        "url": "https://music-api.yujing.fit/",
+        "category": "接口文档",
+        "description": "网易云音乐 API"
+    },
+    {
+        "id": "EHNgZ_Vw3l6erpF4CCvy-",
+        "title": "记事本",
+        "icon": "https://api.iowen.cn/favicon/notepad.yujing.fit/.png",
+        "url": "https://notepad.yujing.fit/",
+        "category": "我的网站",
+        "description": "NotePad"
+    },
+    {
+        "id": "nUWvYvamMYRLS34Gq3djU",
+        "title": "Vue2音乐",
+        "icon": "https://api.iowen.cn/favicon/music.yujing.fit/.png",
+        "url": "https://music.yujing.fit/",
+        "category": "我的网站",
+        "description": "music_app"
+    },
+    {
+        "id": "v3MTE0hxwt7BLM4NzOd6b",
+        "title": "博客园个人博客",
+        "icon": "https://api.iowen.cn/favicon/www.cnblogs.com/JustBloom/.png",
+        "url": "https://www.cnblogs.com/JustBloom/",
+        "category": "我的网站",
+        "description": "梦中千秋 - 博客园"
+    },
+    {
+        "id": "VqGQrqddjDtez8qfHud4J",
+        "title": "CSDN博客",
+        "icon": "https://api.iowen.cn/favicon/blog.csdn.net/qq_50969362.png",
+        "url": "https://blog.csdn.net/qq_50969362",
+        "category": "我的网站",
+        "description": "梦中千秋的博客_CSDN博客-笔记,js,web_class领域博主"
+    },
+    {
+        "id": "1XdNO0dqigIBZuKcanJV9",
+        "title": "HashNode Blog",
+        "icon": "https://api.iowen.cn/favicon/tiam.hashnode.dev/.png",
+        "url": "https://tiam.hashnode.dev/",
+        "category": "我的网站",
+        "description": "Tiam's Blog"
+    },
+    {
+        "id": "SFKgmHXYp6wKWBFNONh0d",
+        "title": "\n\tSwagger Documentation\n",
+        "icon": "https://api.iowen.cn/favicon/swagger.io/docs/.png",
+        "url": "https://swagger.io/docs/",
+        "category": "官方文档",
+        "description": "\n\tSwagger Documentation\n"
+    },
+    {
+        "id": "rW-Y9pl95vMja7YqW3uJr",
+        "title": "Express 4.x - API Reference",
+        "icon": "https://api.iowen.cn/favicon/expressjs.com/en/4x/api.html.png",
+        "url": "https://expressjs.com/en/4x/api.html",
+        "category": "官方文档",
+        "description": "Express 4.x - API Reference"
+    },
+    {
+        "id": "A18LNDIg14eiidSyPYXk4",
+        "title": "小山与bug",
+        "icon": "https://api.iowen.cn/favicon/sunzsh.gitbook.io/xiaoshan.bug/.png",
+        "url": "https://sunzsh.gitbook.io/xiaoshan.bug/",
+        "category": "学习导航",
+        "description": "小山与bug"
+    },
+    {
+        "id": "2sNChBSOb2-IPKxI5iqdE",
+        "title": "Git学习",
+        "icon": "https://api.iowen.cn/favicon/backlog.com/git-tutorial/cn/.png",
+        "url": "https://backlog.com/git-tutorial/cn/",
+        "category": "学习导航",
+        "description": "猴子都能懂的GIT入门 | 贝格乐（Backlog）"
     }
 ]
