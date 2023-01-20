@@ -44,6 +44,8 @@ a {
     margin: 10px;
     border-radius: 10px;
     background: var(--el-color-primary-light-9);
+    position: sticky;
+    top: 150px;
 }
 
 .infinite-list {

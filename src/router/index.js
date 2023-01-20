@@ -4,7 +4,7 @@ import Navigate from "@/views/Navigate.vue";
 import { useSiteStore } from "@/stores/siteInfo";
 import { storeToRefs } from "pinia";
 // 否则报错未安装pinia
-import pinia from "../stores/store";
+import pinia from "@/stores/store";
 const siteStore = useSiteStore(pinia);
 // const siteStore = useSiteStore()
 
@@ -18,7 +18,6 @@ let routes = [
   {
     name: "index",
     path: "/index",
-    // component: () => import('@/views/Navigate.vue'),
     component: Navigate,
   },
 ];
@@ -26,7 +25,7 @@ let routes = [
 categories.value.forEach((element) => {
   routes.push({
     name: element,
-    path: `/${element}`,
+    path: `/${encodeURI(element)}`,
     component: Navigate,
   });
 });
@@ -39,7 +38,6 @@ const router = createRouter({
 // 全局前置守卫, 初始化时, 和切换之前调用,
 router.beforeEach((to, from, next) => {
   category.value = to.name;
-  // console.log('beforeEach',to,from)
   // 放行
   next();
 });

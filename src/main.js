@@ -10,9 +10,9 @@ import router from "./router";
 
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
-
+// 暗黑模式 <html class="dark">
 // import 'element-plus/theme-chalk/dark/css-vars.css'
-// import InstantSearch from "vue-instantsearch";
+
 
 createApp(App)
   .use(pinia)

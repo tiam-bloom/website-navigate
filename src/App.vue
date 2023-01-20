@@ -9,12 +9,13 @@ import Sidebar from '@/components/Sidebar.vue'
     <Sidebar />
     <router-view />
   </div>
+
 </template>
 
 <style scoped>
 .container {
   width: 100%;
-  padding:0 20px 50px;
+  padding: 0 20px 50px;
   display: flex;
 }
 </style>
